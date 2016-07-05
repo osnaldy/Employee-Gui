@@ -1,6 +1,6 @@
 import Tkinter
 import tkFont
-
+import MySQLdb
 
 class Employees():
 
@@ -49,7 +49,7 @@ class Employees():
         id_entry = Tkinter.Entry(root)
         id_entry.grid(row = 2, column = 3, padx = 10)
 
-        lookup_button = Tkinter.Button(root, text = "Change Employee in DB")
+        lookup_button = Tkinter.Button(root, text = "Look Up Employee in DB")
         lookup_button.grid(row = 3, column = 2, pady = 10)
 
         Tkinter.mainloop()
@@ -91,6 +91,44 @@ class Employees():
 
         Tkinter.mainloop()
 
+    def change(self):
+
+        root = Tkinter.Tk()
+
+        root.title("Change Employee's information")
+
+        label = Tkinter.Label(root, text = "Change Employee's Information")
+        label.grid(column = 2, pady = 20)
+
+        label_id = Tkinter.Label(root, text = "Enter Employee's ID_Number")
+        label_id.grid(row = 2, column = 1, pady = 10, padx = 10)
+
+        id_entry = Tkinter.Entry(root)
+        id_entry.grid(row = 2, column = 3, padx = 10)
+
+        change_button = Tkinter.Button(root, text = "Change Employee in DB")
+        change_button.grid(row = 3, column = 2, pady = 10)
+
+        Tkinter.mainloop()
+
+    def delete(self):
+
+        root = Tkinter.Tk()
+        root.title("Delete Employee")
+
+        label = Tkinter.Label(root, text = "Delete Employee's Information")
+        label.grid(column = 2, pady = 20)
+
+        label_id = Tkinter.Label(root, text = "Enter Employee's ID_Number")
+        label_id.grid(row = 2, column = 1, pady = 10, padx = 10)
+
+        id_entry = Tkinter.Entry(root)
+        id_entry.grid(row = 2, column = 3, padx = 10)
+
+        delete_button = Tkinter.Button(root, text = "Delete Employee from DB")
+        delete_button.grid(row = 3, column = 2, pady = 10)
+
+        Tkinter.mainloop()
 
 
 gui = Employees()
